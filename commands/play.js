@@ -28,7 +28,11 @@ module.exports = {
             connection.play(stream, {seek: 0, volume: 1})
             .on('finish', () =>{
                 voiceChannel.leave();
-            })
+            });
+
+            await message.reply(`:thumbsup: Now Playing ***${video.title}***`)
+        } else {
+            message.channel.send('No video results found.');
         }
     }
 }
