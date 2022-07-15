@@ -42,7 +42,7 @@ client.on('message', (message) => {
         client.commands.get('clear').execute(message, args);
     } else if (command === 'play') {
         client.commands.get('play').execute(message, args);
-    } else if (command === 'leave') {
-        client.commands.get('leave').execute(message, args);
+    } else if (command === 'stop') {
+        client.commands.get('stop').execute(message, args);
     }
 });
