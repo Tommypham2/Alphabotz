@@ -33,7 +33,7 @@ module.exports = {
                 message.channel.send('Leaving Channel!');
             });
 
-            await message.reply('Now Playing ***Your Link!***')
+            await message.reply('Now Playing Link')
 
             return
 
