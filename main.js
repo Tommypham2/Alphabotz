@@ -28,9 +28,6 @@ for(const file of commandFiles){
 //set prefix for commands
 const prefix = '!';
 
-
-
-
 //Music bot
 client.on('message', (message) => {
     if(!message.content.startsWith(prefix)) return;

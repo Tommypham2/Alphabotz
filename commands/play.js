@@ -1,5 +1,6 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = {
     name: 'play',
@@ -57,7 +58,7 @@ module.exports = {
                 voiceChannel.leave();
             });
 
-            await message.reply(`Now Playing ***${video.title}***`)
+            await message.reply(`Now Playing ***${video.title}*** Duration:${video.duration}*** ${video.thumbnail}`)
         } else {
             message.channel.send('No video results found.');
         }
