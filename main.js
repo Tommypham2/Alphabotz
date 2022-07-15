@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const { Client, Collection, Intents, CommandInteractionOptionResolver, Message, DiscordAPIError } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.GUILD_MESSAGES, Intents.GUILDS] });
+const Discord = require('discord.js');
 
 //Discord token
 client.login(process.env.TOKEN);
@@ -27,18 +28,11 @@ for(const file of commandFiles){
 //set prefix for commands
 const prefix = '!';
 
-client.on("messageCreate", (message) => {
-    if (message.content.startsWith("ping")) {
-      message.channel.send("pong!");
-    } else
-  
-    if (message.content.startsWith("foo")) {
-      message.channel.send("bar!");
-    }
-  });
+
+
 
 //Music bot
-/*client.on('messageCreate', (message) => {
+client.on('message', (message) => {
     if(!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
@@ -47,8 +41,8 @@ client.on("messageCreate", (message) => {
     if(command === 'clear') {
         client.commands.get('clear').execute(message, args);
     } else if (command === 'play') {
-        client.commands.get('!play').execute(message,args);
+        client.commands.get('play').execute(message, args);
     } else if (command === 'leave') {
         client.commands.get('leave').execute(message, args);
     }
-});*/
+});
