@@ -104,4 +104,5 @@ const skipSong = (message, serverQueue) => {
         return message.channel.send('There are no songs queued to skip!');
     }
     serverQueue.connection.dispatcher.end();
+
 }
